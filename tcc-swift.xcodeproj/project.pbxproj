@@ -13,11 +13,12 @@
 		CC1448C81D56E52C00223FD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1448C71D56E52C00223FD4 /* AppDelegate.swift */; };
 		CC1448CA1D56E52C00223FD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1448C91D56E52C00223FD4 /* ViewController.swift */; };
 		CC1448CD1D56E52C00223FD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1448CB1D56E52C00223FD4 /* Main.storyboard */; };
-		CC1448D01D56E52C00223FD4 /* tcc_swift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC1448CE1D56E52C00223FD4 /* tcc_swift.xcdatamodeld */; };
+		CC1448D01D56E52C00223FD4 /* alternative.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC1448CE1D56E52C00223FD4 /* alternative.xcdatamodeld */; };
 		CC1448D21D56E52C00223FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC1448D11D56E52C00223FD4 /* Assets.xcassets */; };
 		CC1448D51D56E52C00223FD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1448D31D56E52C00223FD4 /* LaunchScreen.storyboard */; };
 		CC1448E01D56E52C00223FD4 /* tcc_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1448DF1D56E52C00223FD4 /* tcc_swiftTests.swift */; };
 		CC1448EB1D56E52C00223FD4 /* tcc_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1448EA1D56E52C00223FD4 /* tcc_swiftUITests.swift */; };
+		CC1448FA1D56EE2600223FD4 /* model_tcc_swift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC1448F81D56EE2600223FD4 /* model_tcc_swift.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,7 @@
 		CC1448C71D56E52C00223FD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC1448C91D56E52C00223FD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CC1448CC1D56E52C00223FD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CC1448CF1D56E52C00223FD4 /* tcc_swift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tcc_swift.xcdatamodel; sourceTree = "<group>"; };
+		CC1448CF1D56E52C00223FD4 /* alternative.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = alternative.xcdatamodel; sourceTree = "<group>"; };
 		CC1448D11D56E52C00223FD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC1448D41D56E52C00223FD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC1448D61D56E52C00223FD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +60,7 @@
 		CC1448E61D56E52C00223FD4 /* tcc-swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tcc-swiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC1448EA1D56E52C00223FD4 /* tcc_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tcc_swiftUITests.swift; sourceTree = "<group>"; };
 		CC1448EC1D56E52C00223FD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC1448F91D56EE2600223FD4 /* model_tcc_swift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = model_tcc_swift.xcdatamodel; sourceTree = "<group>"; };
 		CD19BE20CBBD20BB0A77A2CF /* Pods-tcc-swiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tcc-swiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tcc-swiftTests/Pods-tcc-swiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E538E41AD383FB336EB3A5EB /* Pods-tcc-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tcc-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tcc-swift/Pods-tcc-swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,7 +147,8 @@
 				CC1448D11D56E52C00223FD4 /* Assets.xcassets */,
 				CC1448D31D56E52C00223FD4 /* LaunchScreen.storyboard */,
 				CC1448D61D56E52C00223FD4 /* Info.plist */,
-				CC1448CE1D56E52C00223FD4 /* tcc_swift.xcdatamodeld */,
+				CC1448F81D56EE2600223FD4 /* model_tcc_swift.xcdatamodeld */,
+				CC1448CE1D56E52C00223FD4 /* alternative.xcdatamodeld */,
 			);
 			path = "tcc-swift";
 			sourceTree = "<group>";
@@ -430,7 +433,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC1448D01D56E52C00223FD4 /* tcc_swift.xcdatamodeld in Sources */,
+				CC1448D01D56E52C00223FD4 /* alternative.xcdatamodeld in Sources */,
+				CC1448FA1D56EE2600223FD4 /* model_tcc_swift.xcdatamodeld in Sources */,
 				CC1448CA1D56E52C00223FD4 /* ViewController.swift in Sources */,
 				CC1448C81D56E52C00223FD4 /* AppDelegate.swift in Sources */,
 			);
@@ -688,13 +692,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CC1448CE1D56E52C00223FD4 /* tcc_swift.xcdatamodeld */ = {
+		CC1448CE1D56E52C00223FD4 /* alternative.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				CC1448CF1D56E52C00223FD4 /* tcc_swift.xcdatamodel */,
+				CC1448CF1D56E52C00223FD4 /* alternative.xcdatamodel */,
 			);
-			currentVersion = CC1448CF1D56E52C00223FD4 /* tcc_swift.xcdatamodel */;
-			path = tcc_swift.xcdatamodeld;
+			currentVersion = CC1448CF1D56E52C00223FD4 /* alternative.xcdatamodel */;
+			path = alternative.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		CC1448F81D56EE2600223FD4 /* model_tcc_swift.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CC1448F91D56EE2600223FD4 /* model_tcc_swift.xcdatamodel */,
+			);
+			currentVersion = CC1448F91D56EE2600223FD4 /* model_tcc_swift.xcdatamodel */;
+			path = model_tcc_swift.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
