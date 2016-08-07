@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1808" minimumToolsVersion="Xcode 4.3">
-    <entity name="Admin" syncable="YES">
+    <entity name="Admin" representedClassName=".Admin" syncable="YES">
         <attribute name="created_at" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="current_sign_in_at" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="current_sign_in_ip" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,7 +23,7 @@
         <relationship name="belongs_to_state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="State" inverseName="has_many_city" inverseEntity="State" syncable="YES"/>
         <relationship name="has_many_event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="belongs_to_city" inverseEntity="Event" syncable="YES"/>
     </entity>
-    <entity name="Company" syncable="YES">
+    <entity name="Company" representedClassName=".Company" syncable="YES">
         <attribute name="company_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="created_at" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="long_description" optional="YES" attributeType="String" syncable="YES"/>
@@ -141,7 +141,7 @@
         <relationship name="has_many_invitation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Invitation" inverseName="belongs_to_user" inverseEntity="Invitation" syncable="YES"/>
         <relationship name="has_many_users_company_type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserCompanyType" inverseName="has_many_user" inverseEntity="UserCompanyType" syncable="YES"/>
     </entity>
-    <entity name="UserCompanyType" syncable="YES">
+    <entity name="UserCompanyType" representedClassName=".UserCompanyType" syncable="YES">
         <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="admin" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="company_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -160,18 +160,18 @@
         <relationship name="has_many_user_company_type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserCompanyType" inverseName="belongs_user_type" inverseEntity="UserCompanyType" syncable="YES"/>
     </entity>
     <elements>
-        <element name="City" positionX="126" positionY="-99" width="128" height="150"/>
-        <element name="Company" positionX="-74" positionY="-405" width="128" height="180"/>
-        <element name="Country" positionX="124" positionY="-216" width="128" height="105"/>
-        <element name="Event" positionX="-81" positionY="-72" width="128" height="585"/>
-        <element name="EventCategory" positionX="133" positionY="126" width="128" height="120"/>
-        <element name="EventType" positionX="151" positionY="27" width="128" height="120"/>
-        <element name="Invitation" positionX="-360" positionY="90" width="128" height="195"/>
-        <element name="InvitationType" positionX="-522" positionY="135" width="128" height="120"/>
-        <element name="State" positionX="295" positionY="-171" width="128" height="135"/>
-        <element name="User" positionX="-405" positionY="-207" width="128" height="343"/>
-        <element name="UserCompanyType" positionX="-290" positionY="-495" width="128" height="180"/>
-        <element name="UserType" positionX="-506" positionY="-360" width="128" height="120"/>
-        <element name="Admin" positionX="-324" positionY="-351" width="128" height="225"/>
+        <element name="Admin" positionX="117" positionY="-576" width="128" height="225"/>
+        <element name="City" positionX="279" positionY="-213" width="128" height="150"/>
+        <element name="Company" positionX="-245" positionY="-594" width="128" height="180"/>
+        <element name="Country" positionX="286" positionY="-522" width="128" height="105"/>
+        <element name="Event" positionX="-63" positionY="-594" width="128" height="585"/>
+        <element name="EventCategory" positionX="117" positionY="-288" width="128" height="120"/>
+        <element name="EventType" positionX="-261" positionY="-381" width="128" height="120"/>
+        <element name="Invitation" positionX="-423" positionY="-387" width="128" height="195"/>
+        <element name="InvitationType" positionX="-416" positionY="-120" width="128" height="120"/>
+        <element name="State" positionX="286" positionY="-387" width="128" height="135"/>
+        <element name="User" positionX="-612" positionY="-459" width="128" height="343"/>
+        <element name="UserCompanyType" positionX="-414" positionY="-594" width="128" height="180"/>
+        <element name="UserType" positionX="-612" positionY="-594" width="128" height="120"/>
     </elements>
 </model>
