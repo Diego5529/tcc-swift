@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1808" minimumToolsVersion="Automatic">
+    <entity name="Event" syncable="YES"/>
+    <entity name="User" syncable="YES"/>
+    <elements>
+        <element name="User" positionX="-36" positionY="-81" width="128" height="45"/>
+        <element name="Event" positionX="-36" positionY="9" width="128" height="45"/>
+    </elements>
+</model>
