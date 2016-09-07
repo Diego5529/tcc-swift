@@ -13,7 +13,7 @@ import Foundation
 import CoreData
 
 extension User {
-
+    
     @NSManaged var birth_date: NSTimeInterval
     @NSManaged var created_at: NSTimeInterval
     @NSManaged var current_sign_in_at: NSTimeInterval
@@ -24,6 +24,7 @@ extension User {
     @NSManaged var last_sign_in_at: NSTimeInterval
     @NSManaged var last_sign_in_ip: String?
     @NSManaged var long_name: String?
+    @NSManaged var last_name: String?
     @NSManaged var name: String?
     @NSManaged var phone_number: String?
     @NSManaged var remember_created_at: NSTimeInterval
@@ -34,5 +35,9 @@ extension User {
     @NSManaged var user_id: Int16
     @NSManaged var has_many_invitation: Guest?
     @NSManaged var has_many_users_company_type: UserCompanyType?
-
+    @NSManaged var token: NSString?
+    @NSManaged var uid: NSString?
+    @NSManaged var provider: NSString?
+    @NSManaged var active: Bool
+    
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1808" minimumToolsVersion="Xcode 4.3">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1909" minimumToolsVersion="Xcode 4.3">
     <entity name="Admin" representedClassName=".Admin" syncable="YES">
         <attribute name="created_at" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="current_sign_in_at" optional="YES" attributeType="Date" syncable="YES"/>
@@ -119,7 +119,8 @@
         <relationship name="belongs_to_country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="has_many_state" inverseEntity="Country" syncable="YES"/>
         <relationship name="has_many_city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="belongs_to_state" inverseEntity="City" syncable="YES"/>
     </entity>
-    <entity name="User" representedClassName="User" syncable="YES">
+    <entity name="User" representedClassName="User" isAbstract="YES" syncable="YES">
+        <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="birth_date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="created_at" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="current_sign_in_at" optional="YES" attributeType="Date" syncable="YES"/>
@@ -127,19 +128,29 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="encrypted_password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="genre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="last_sign_in_at" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="last_sign_in_ip" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="long_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone_number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="provider" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="remember_created_at" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="reset_password_sent_at" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="reset_password_token" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sign_in_count" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updated_at" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="user_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="has_many_invitation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Invitation" inverseName="belongs_to_user" inverseEntity="Invitation" syncable="YES"/>
         <relationship name="has_many_users_company_type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserCompanyType" inverseName="has_many_user" inverseEntity="UserCompanyType" syncable="YES"/>
+        <fetchedProperty name="fetchedProperty1" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="User"/>
+        </fetchedProperty>
+        <fetchedProperty name="isToken" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="User"/>
+        </fetchedProperty>
     </entity>
     <entity name="UserCompanyType" representedClassName=".UserCompanyType" syncable="YES">
         <attribute name="active" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -159,6 +170,7 @@
         <attribute name="user_type_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="has_many_user_company_type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserCompanyType" inverseName="belongs_user_type" inverseEntity="UserCompanyType" syncable="YES"/>
     </entity>
+    <fetchRequest name="UserByToken" entity="User" predicateString="token == &quot;%@&quot;"/>
     <elements>
         <element name="Admin" positionX="117" positionY="-576" width="128" height="225"/>
         <element name="City" positionX="279" positionY="-213" width="128" height="150"/>
@@ -170,7 +182,7 @@
         <element name="Invitation" positionX="-423" positionY="-387" width="128" height="195"/>
         <element name="InvitationType" positionX="-416" positionY="-120" width="128" height="120"/>
         <element name="State" positionX="286" positionY="-387" width="128" height="135"/>
-        <element name="User" positionX="-612" positionY="-459" width="128" height="343"/>
+        <element name="User" positionX="-612" positionY="-459" width="128" height="464"/>
         <element name="UserCompanyType" positionX="-414" positionY="-594" width="128" height="180"/>
         <element name="UserType" positionX="-612" positionY="-594" width="128" height="120"/>
     </elements>
