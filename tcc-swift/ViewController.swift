@@ -8,8 +8,11 @@
 
 import UIKit
 import CoreData
+import GoogleSignIn
+import Google
+import GSS
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate  {
     
     //views
     @IBOutlet var activityView: UIView!
@@ -43,9 +46,225 @@ class ViewController: UIViewController {
     var context: NSManagedObjectContext!
     var urlPath: NSString = ""
     var loggedUser: User!
+    /*
+    let loginButton: FBSDKLoginButton = {
+        let button = FBSDKLoginButton()
+        button.readPermissions = ["email"]
+        return button
+    }()
+    
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        print(result)
+        fetchProfile()
+    }
+    
+    func fetchProfile() {
+        let parameters = ["fields": "email, first_name, last_name, picture.type(large), id"]
+        FBSDKGraphRequest(graphPath: "me", parameters: parameters).startWithCompletionHandler({ (connection, user, requestError) -> Void in
+            
+            if requestError != nil {
+                print(requestError)
+                return
+            }
+            
+            let email = user["email"] as? String
+            let provider = "facebook"
+            let id = user["id"] as? String
+            let name = user["first_name"] as? String
+            
+            print(email, user)
+            
+            var pictureUrl = ""
+            
+            if let picture = user["picture"] as? NSDictionary, data = picture["data"] as? NSDictionary, url = data["url"] as? String {
+                pictureUrl = url
+            }
+            
+            print("Auth")
+            
+            let stringURL = self.urlPath .stringByAppendingString("/user/omniauth")
+            
+            let url = NSURL(string: stringURL)!
+            
+            let request = NSMutableURLRequest(URL: url, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringCacheData, timeoutInterval: 10)
+            
+            request.HTTPMethod = "POST"
+            
+            //email, :provider, :uid, :name
+            let bodyData = String(format: "user[email]=%@&user[provider]=%@&user[uid]=%@&user[name]=%@", email!, provider, id!, name!)
+            request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
+            
+            let session = NSURLSession.sharedSession()
+            
+            let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+                if (error != nil){
+                    print(error)
+                }else{
+                    do{
+                        let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+                        
+                        if (jsonResult is NSArray){
+                            print(jsonResult)
+                        }
+                        else if(jsonResult is NSDictionary){
+                            print(jsonResult)
+                            
+                            let userClass: NSManagedObject = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: self.context)
+                            
+                            for (key, value) in jsonResult as! NSDictionary {
+                                print("Property: \"\(key as! String)\" Value: \"\(value as! String)\" ")
+                                
+                                userClass.setValue(value, forKey:key as! String);
+                            }
+                            
+                            print (userClass)
+                            
+                            do {
+                                try self.context.save()
+                                self.defaults.setObject(userClass, forKey: "loggedUser")
+                            }catch{
+                            }
+                            
+                        }else if(jsonResult is NSString){
+                            print(jsonResult)
+                        }
+                        print(jsonResult)
+                    }catch {
+                        //let datastring = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                        //self.returnTextView.text = String(datastring)
+                        print(error)
+                        
+                        let select = NSFetchRequest(entityName: "User")
+                        
+                        select.returnsObjectsAsFaults = false
+                        
+                        do {
+                            let results = try self.context.executeFetchRequest(select)
+                            
+                            if results.count > 0 {
+                                print(results.count)
+                            }
+                        }catch{
+                        }
+                    }
+                }
+            }
+            
+            task.resume()
+        })
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        
+    }
+    
+    func loginButtonWillLogin(loginButton: FBSDKLoginButton!) -> Bool {
+        return true
+    }
+    */
+    
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
+        print(user.profile.email)
+        print(user)
+        
+        let email = user.profile.email
+        let name = user.profile.name
+        let id = user.userID
+        let provider = "google"
+        
+        let stringURL = self.urlPath .stringByAppendingString("/user/omniauth")
+        
+        let url = NSURL(string: stringURL)!
+        
+        let request = NSMutableURLRequest(URL: url, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringCacheData, timeoutInterval: 10)
+        
+        request.HTTPMethod = "POST"
+        
+        //email, :provider, :uid, :name
+        let bodyData = String(format: "user[email]=%@&user[provider]=%@&user[uid]=%@&user[name]=%@", email!, provider, id, name!)
+        request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
+        
+        let session = NSURLSession.sharedSession()
+        
+        let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            if (error != nil){
+                print(error)
+            }else{
+                do{
+                    let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+                    
+                    if (jsonResult is NSArray){
+                        print(jsonResult)
+                    }
+                    else if(jsonResult is NSDictionary){
+                        print(jsonResult)
+                        
+                        let userClass: NSManagedObject = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: self.context)
+                        
+                        for (key, value) in jsonResult as! NSDictionary {
+                            print("Property: \"\(key as! String)\" Value: \"\(value as! String)\" ")
+                            
+                            userClass.setValue(value, forKey:key as! String);
+                        }
+                        
+                        print (userClass)
+                        
+                        do {
+                            try self.context.save()
+                            self.defaults.setObject(userClass, forKey: "loggedUser")
+                        }catch{
+                        }
+                        
+                    }else if(jsonResult is NSString){
+                        print(jsonResult)
+                    }
+                    print(jsonResult)
+                }catch {
+                    //let datastring = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    //self.returnTextView.text = String(datastring)
+                    print(error)
+                    
+                    let select = NSFetchRequest(entityName: "User")
+                    
+                    select.returnsObjectsAsFaults = false
+                    
+                    do {
+                        let results = try self.context.executeFetchRequest(select)
+                        
+                        if results.count > 0 {
+                            print(results.count)
+                        }
+                    }catch{
+                    }
+                }
+            }
+        }
+        
+        task.resume()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        
+        if configureError != nil {
+            print(configureError)
+        }
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
+        
+        let button = GIDSignInButton(frame: CGRectMake(0, 0, 100, 100))
+        button.center = view.center
+        
+        view.addSubview(button)
+
+        
+        //view.addSubview(loginButton)
+        //loginButton.center = view.center
+        //loginButton.delegate = self
         
         //prepareViewa
         hiddenAllViews()
@@ -61,8 +280,13 @@ class ViewController: UIViewController {
         urlPath = "http://localhost:3000/api"
         
         //loading settings
-        let obj = self.defaults.stringForKey("loggedUser")
+        _ = self.defaults.stringForKey("loggedUser")
         
+        //if let _ = FBSDKAccessToken.currentAccessToken() {
+        //    fetchProfile()
+        //}
+        
+        /*
         let select = NSFetchRequest()
         
         select.predicate = NSPredicate(format: "token == %@", obj!)
@@ -78,6 +302,7 @@ class ViewController: UIViewController {
         }catch{
             print(loggedUser.name)
         }
+        */
     }
 
     override func didReceiveMemoryWarning() {
@@ -165,9 +390,6 @@ class ViewController: UIViewController {
         }
         
         task.resume()
-        
-        
-        
     }
     
     @IBAction func goToSignUp(sender: UIButton){

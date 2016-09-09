@@ -6,6 +6,9 @@ target 'tcc-swift' do
   use_frameworks!
 
   # Pods for tcc-swift
+  #pod 'FacebookCore'
+  #pod 'FacebookLogin'
+  pod 'Google/SignIn'
 
   target 'tcc-swiftTests' do
     inherit! :search_paths
@@ -16,5 +19,4 @@ target 'tcc-swift' do
     inherit! :search_paths
     # Pods for testing
   end
-
 end

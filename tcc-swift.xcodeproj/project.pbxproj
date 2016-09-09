@@ -45,6 +45,11 @@
 		CC1449621D56F3D100223FD4 /* UserCompanyType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1449481D56F3D100223FD4 /* UserCompanyType+CoreDataProperties.swift */; };
 		CC1449631D56F3D100223FD4 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1449491D56F3D100223FD4 /* UserType.swift */; };
 		CC1449641D56F3D100223FD4 /* UserType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC14494A1D56F3D100223FD4 /* UserType+CoreDataProperties.swift */; };
+		F14981AB1D80D23800FCCA81 /* Imports.m in Sources */ = {isa = PBXBuildFile; fileRef = F14981AA1D80D23800FCCA81 /* Imports.m */; };
+		F15BD3731D8102F60082F633 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F15BD3721D8102F60082F633 /* GoogleService-Info.plist */; };
+		F15BD3751D8103B20082F633 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15BD3741D8103B20082F633 /* AddressBook.framework */; };
+		F15BD3771D8103BA0082F633 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15BD3761D8103BA0082F633 /* SafariServices.framework */; };
+		F15BD3791D8103D00082F633 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F15BD3781D8103D00082F633 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +120,14 @@
 		CC14494A1D56F3D100223FD4 /* UserType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserType+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CD19BE20CBBD20BB0A77A2CF /* Pods-tcc-swiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tcc-swiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tcc-swiftTests/Pods-tcc-swiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E538E41AD383FB336EB3A5EB /* Pods-tcc-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tcc-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tcc-swift/Pods-tcc-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		F14981A51D80D1C800FCCA81 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		F14981A61D80D1C800FCCA81 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		F14981A91D80D23700FCCA81 /* tcc-swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tcc-swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		F14981AA1D80D23800FCCA81 /* Imports.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Imports.m; sourceTree = "<group>"; };
+		F15BD3721D8102F60082F633 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F15BD3741D8103B20082F633 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		F15BD3761D8103BA0082F633 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		F15BD3781D8103D00082F633 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +135,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F15BD3791D8103D00082F633 /* SystemConfiguration.framework in Frameworks */,
+				F15BD3771D8103BA0082F633 /* SafariServices.framework in Frameworks */,
+				F15BD3751D8103B20082F633 /* AddressBook.framework in Frameworks */,
 				A36818ACC82D1DE074590D5B /* Pods_tcc_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,6 +177,11 @@
 		3B5FE6243113BF1293AB1DF7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F15BD3781D8103D00082F633 /* SystemConfiguration.framework */,
+				F15BD3761D8103BA0082F633 /* SafariServices.framework */,
+				F15BD3741D8103B20082F633 /* AddressBook.framework */,
+				F14981A51D80D1C800FCCA81 /* FBSDKCoreKit.framework */,
+				F14981A61D80D1C800FCCA81 /* FBSDKLoginKit.framework */,
 				0827DFA0CF9CBD8E5A198FD4 /* Pods_tcc_swift.framework */,
 				709C3E8AE185A36D01CE385D /* Pods_tcc_swiftTests.framework */,
 				2515906248D3C2DBC1246840 /* Pods_tcc_swiftUITests.framework */,
@@ -200,8 +221,11 @@
 				CC1448D11D56E52C00223FD4 /* Assets.xcassets */,
 				CC1448D31D56E52C00223FD4 /* LaunchScreen.storyboard */,
 				CC1448D61D56E52C00223FD4 /* Info.plist */,
+				F15BD3721D8102F60082F633 /* GoogleService-Info.plist */,
 				CC1448F81D56EE2600223FD4 /* model_tcc_swift.xcdatamodeld */,
 				CC1448CE1D56E52C00223FD4 /* alternative.xcdatamodeld */,
+				F14981AA1D80D23800FCCA81 /* Imports.m */,
+				F14981A91D80D23700FCCA81 /* tcc-swift-Bridging-Header.h */,
 			);
 			path = "tcc-swift";
 			sourceTree = "<group>";
@@ -378,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC1448D51D56E52C00223FD4 /* LaunchScreen.storyboard in Resources */,
+				F15BD3731D8102F60082F633 /* GoogleService-Info.plist in Resources */,
 				CC1448D21D56E52C00223FD4 /* Assets.xcassets in Resources */,
 				CC1448CD1D56E52C00223FD4 /* Main.storyboard in Resources */,
 			);
@@ -543,6 +568,7 @@
 				CC1448C81D56E52C00223FD4 /* AppDelegate.swift in Sources */,
 				CC14495D1D56F3D100223FD4 /* State.swift in Sources */,
 				CC1449511D56F3D100223FD4 /* Country.swift in Sources */,
+				F14981AB1D80D23800FCCA81 /* Imports.m in Sources */,
 				CC14495C1D56F3D100223FD4 /* GuestType+CoreDataProperties.swift in Sources */,
 				CC1449521D56F3D100223FD4 /* Country+CoreDataProperties.swift in Sources */,
 				CC14494C1D56F3D100223FD4 /* Admin+CoreDataProperties.swift in Sources */,
@@ -650,6 +676,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -688,6 +715,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -699,10 +727,19 @@
 			baseConfigurationReference = E538E41AD383FB336EB3A5EB /* Pods-tcc-swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "tcc-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ifsp-tcc.com.br.tcc-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "tcc-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tcc-swift/tcc-swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -711,10 +748,18 @@
 			baseConfigurationReference = 35CE58DD9FFCF4FAC1765FBB /* Pods-tcc-swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "tcc-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ifsp-tcc.com.br.tcc-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "tcc-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "tcc-swift/tcc-swift-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
